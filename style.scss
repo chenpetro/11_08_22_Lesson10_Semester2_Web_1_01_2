@@ -20,9 +20,11 @@
     background: rgb(218, 255, 6);
     // padding: 60px;
     & div{
-        width: 200px;
+        min-width: 200px;
         font-size: 60px;
         text-align: center;
-        margin: 20px
+        padding: 20px;
+        word-spacing: 1000px;
+
     }
 }

@@ -34,15 +34,19 @@ function setTime(id, endtime){
 let timer1 = document.getElementById(id)
 let seconds = timer1.querySelector('.seconds')
 let minutes = timer1.querySelector('.minutes')
+let hours = timer1.querySelector('.hours')
 let days = timer1.querySelector('.days')
 timeInterval = setInterval(updateTime, 1000)
-
 function updateTime(){
     let time = getTime(endtime)    
     seconds.textContent = `${time.seconds} seconds`;
     minutes.textContent = `${time.minutes} minutes`;
     hours.textContent = `${time.hours} hours`;
     days.textContent = `${time.days} days`;
+
+    if (time.total <= 0 ){
+        clearInterval(timeInterval);
+    }
 }
 
 updateTime()
@@ -50,3 +54,4 @@ updateTime()
 }
 
 setTime('timer1', deadline)
+setTime('timer2', '01-02-2025')
